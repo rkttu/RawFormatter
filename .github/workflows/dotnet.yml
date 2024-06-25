@@ -3,6 +3,9 @@ name: .NET
 on:
   push:
     branches: [ "main" ]
+    paths:
+    - src/**
+    - .github/workflows/**
   pull_request:
     branches: [ "main" ]
 env:
