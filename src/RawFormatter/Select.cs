@@ -45,12 +45,15 @@ namespace RawFormatter
 
             foreach (var eachPair in this)
             {
-                var matchingBlock = eachPair.Value;
+                if (object.Equals(criteria, eachPair.Key))
+                {
+                    var matchingBlock = eachPair.Value;
 
-                if (matchingBlock is Delegate callback && callback.TryInvokeWithSingleParameter(criteria, criteria.GetType(), out var result))
-                    return Convert.ToString(result) ?? string.Empty;
-                else
-                    return Convert.ToString(matchingBlock) ?? string.Empty;
+                    if (matchingBlock is Delegate callback && callback.TryInvokeWithSingleParameter(criteria, criteria.GetType(), out var result))
+                        return Convert.ToString(result) ?? string.Empty;
+                    else
+                        return Convert.ToString(matchingBlock) ?? string.Empty;
+                }
             }
 
             if (defaultBlock != null)
