@@ -6,9 +6,9 @@ using System.Threading;
 namespace RawFormatter
 {
     /// <summary>
-    /// Represents a switch statement with multiple cases.
+    /// Represents a select (switch) statement with multiple cases.
     /// </summary>
-    public class Switch : Dictionary<object, object>
+    public class Select : Dictionary<object, object>
     {
         private sealed class __Else__ { internal __Else__() { } }
         private static readonly Lazy<__Else__> _elseKeyFactory = new Lazy<__Else__>(
@@ -20,16 +20,16 @@ namespace RawFormatter
         public static object Else => _elseKeyFactory.Value;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Switch"/> class with the specified condition.
+        /// Initializes a new instance of the <see cref="Select"/> class with the specified condition.
         /// </summary>
         /// <param name="condition">The condition for the switch statement.</param>
-        public Switch(object condition) { _conditionEval = () => condition; }
+        public Select(object condition) { _conditionEval = () => condition; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Switch"/> class with the specified condition evaluation function.
+        /// Initializes a new instance of the <see cref="Select"/> class with the specified condition evaluation function.
         /// </summary>
         /// <param name="conditionEval">The function that evaluates the condition for the switch statement.</param>
-        public Switch(Func<object> conditionEval) { _conditionEval = conditionEval; }
+        public Select(Func<object> conditionEval) { _conditionEval = conditionEval; }
 
         private readonly Func<object> _conditionEval;
 

@@ -9,11 +9,17 @@ A library that combines raw string literals and string interpolation introduced 
 - Requires a platform with .NET Standard 2.0 or later, and Windows Vista+, Windows Server 2008+
   - Supported .NET Version: .NET Core 2.0+, .NET 5+, .NET Framework 4.6.1+, Mono 5.4+, UWP 10.0.16299+, Unity 2018.1+
 
+## Breaking Change
+
+### From 0.5.1 to 0.5.2
+
+- Considering that the type name `Switch` may exist among namespaces linked by implicit reference in the BCL, change the type name to `Select`.
+
 ## How to use
 
 ### Use with conditional block
 
-Initialize and pass instances of the `If`, `For`, `Switch` and `ForEach` classes in the string interpolation interval. At this point, you can use collection initializers to implement a simplified syntax.
+Initialize and pass instances of the `If`, `For`, `Select` and `ForEach` classes in the string interpolation interval. At this point, you can use collection initializers to implement a simplified syntax.
 
 ```csharp
 using RawFormatter;
@@ -36,10 +42,10 @@ var fragment =
 		{{new For(5) { (int i) => $"/* forloop / {i} time(s) */" } }}
 
 		/*
-		{{new Switch(cases)
+		{{new Select(cases)
 		{
-			{ 3, (int num) => $"switch case / {num} with 3" },
-			{ Switch.Else, (int num) => $"switch default / {num}" }
+			{ 3, (int num) => $"select case / {num} with 3" },
+			{ Select.Else, (int num) => $"select default / {num}" }
 		}
 		}}
 		*/

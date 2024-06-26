@@ -23,10 +23,10 @@ namespace RawFormatter.Test
 					{{new For(5) { (int i) => $"/* forloop / {i} time(s) */" } }}
 
 					/*
-					{{new Switch(cases)
+					{{new Select(cases)
 					{
-						{ 3, (int num) => $"switch case / {num} with 3" },
-						{ Switch.Else, (int num) => $"switch default / {num}" }
+						{ 3, (int num) => $"select case / {num} with 3" },
+						{ Select.Else, (int num) => $"select default / {num}" }
 					}
 					}}
 					*/
@@ -64,7 +64,7 @@ namespace RawFormatter.Test
             Assert.Contains("if - ", fragment);
             Assert.Contains("forloop", fragment);
             Assert.Contains("foreach", fragment);
-            Assert.Contains("switch", fragment);
+            Assert.Contains("select", fragment);
 		}
 	}
 }
