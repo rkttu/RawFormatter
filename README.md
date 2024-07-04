@@ -1,6 +1,8 @@
 # RawFormatter
 
-[![NuGet Version](https://img.shields.io/nuget/v/RawFormatter)](https://www.nuget.org/packages/RawFormatter/) ![Build Status](https://github.com/rkttu/RawFormatter/actions/workflows/dotnet.yml/badge.svg) [![GitHub Sponsors](https://img.shields.io/github/sponsors/rkttu)](https://github.com/sponsors/rkttu/)
+**Important notice: This library is no longer maintained. It was developed to verify the idea of ​​templating using raw strings, but development was discontinued because it was judged to be complicated for actual use. If you are interested, please fork and use this project.**
+
+[![NuGet Version](https://img.shields.io/nuget/v/RawFormatter)](https://www.nuget.org/packages/RawFormatter/) ![Build Status](https://github.com/rkttu/RawFormatter/actions/workflows/dotnet.yml/badge.svg)
 
 A library that combines raw string literals and string interpolation introduced in C# 11, compatible with .NET Standard 2.0, to implement fast-acting template features.
 
